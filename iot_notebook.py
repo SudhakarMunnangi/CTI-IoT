@@ -16,7 +16,7 @@ print("Hello from containerized conda python 3 - iot_notebook ")
 # In[ ]:
 
 
-# installation of tensorflow and keras - only to run on the start of this notebook.
+# installation of tensorflow and keras - only to run once, when the notebook is started.
 get_ipython().system('pip install tensorflow==2.2')
 get_ipython().system('pip install keras')
 
