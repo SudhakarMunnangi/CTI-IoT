@@ -182,7 +182,7 @@ sns = boto3.client('sns')
 if(message != ''):
     message = message + '\n' + 'Check the dynamoDB table - Run1_CT for timestamp: '+ tstmp
     response = sns.publish(
-        TopicArn='arn:aws:sns:ap-southeast-2:776234713800:IoT_publish_to',   
+        TopicArn='arn:aws:sns:ap-southeast-2:--AWSID--:IoT_publish_to',   
         Message=message,   
         Subject = 'Higher counts received for devices'
     )
