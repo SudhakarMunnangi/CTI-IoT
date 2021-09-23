@@ -1,6 +1,6 @@
 This project is an attempt to identify large scale botnet attacks on/using IoT devices in the production field.
 
-Methodology(in brief): As it's not a feasible option to develop a solution on large scale IoT devices, we have a .NET project to simulate the IoT environment. The .NET project sends the messages to an established MQTT topic in the AWS(registered as an IoT Thing in IoT Core). The payload contains the sensor ID, time of message generation and description. Here the description can be of temperature, humidity or any value that a sensor captures. 
+Methodology(in brief): As it's not a feasible option to develop and test a solution on large scale IoT devices, we have a .NET project setup to simulate the IoT environment. The .NET project sends the messages to an established MQTT topic in the AWS(registered as an IoT Thing in IoT Core). The payload contains the sensor ID, time of message generation and description. Here the description can be of temperature, humidity or any value that a sensor captures. 
 
 An IoT rule is then setup to collect those messages from the topic and deliver to IoT Analytics channel. IoT Analytics is a managed service offering from AWS which is used to collect, process, store and analyse IoT data in real-time. We transform the messages in this stage and set up a run schedule(Data set generation) for every 15 minutes to have all the messages grouped in past 15 minutes. Messages are then extracted to a .csv file and this triggers the containerized notebook which holds the iot_notebook.py code. 
 
